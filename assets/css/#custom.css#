@@ -1,0 +1,43 @@
+#title {
+    font-family: 'Source Sans Pro';
+    font-weight: 200;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+    color: #000;
+    background: #eeeeee;
+    text-decoration: none;
+ 
+}
+
+.bg {
+    background: #eeeeee;
+}
+hr {
+    display: block;
+    line-height: 0px;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #666;
+    margin: 1em 0;
+    padding: 0;
+    background: #eeeeee;
+}
+
+#title a{
+    color: #000;
+}
+#title a:hover{
+    text-decoration: none;
+}
+#title a:visited{
+    text-decoration: none;
+}
+#title a:active{
+    text-decoration: none;
+}
+html{
+    background: #eeeeee;
+}
