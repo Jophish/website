@@ -42,19 +42,40 @@ def render_about():
 
 def render_index():
     bodyString = ""
+    cssString = ""
+    
     renderer.load_template('post_entry')
-
+    
     r = lambda: random.randint(0,255)
     init_col = Color(hsl=(0, .5, .7))
-    inc = .05    
+    inc = .05
+    count = 1;
     for post in files:
         class _postEntry(object):
-            def color(self):
-                return init_col.hex
+
             def title(self):
                 return post
-        init_col = Color(hsl = (init_col.hsl[0]+ inc, .5,.7))
+            def number(self):
+                return str(count)
+        
         bodyString += renderer.render(_postEntry())
+        
+
+        renderer.load_template('custom_colors')
+
+        class _customColors(object):
+            def color(self):
+                return  Color(hsl = (init_col.hsl[0], .9, .8)).hex
+            def id(self):
+                return str(count)
+            def firstColor(self):
+                return init_col.hex
+            
+                    
+        cssString += renderer.render(_customColors())
+                    
+        count += 1;
+        init_col = Color(hsl = (init_col.hsl[0]+ inc, .5,.7))
 
     class _siteTemplate(basicPage):
             def posts(self):
@@ -65,6 +86,9 @@ def render_index():
     rendered_about = open("index.html", "w+")
     rendered_about.write(renderer.render(_siteTemplate()))
     rendered_about.close()
+    rendered_customColors = open("assets/css/custom_colors.css", "w+")
+    rendered_customColors.write(cssString)
+    rendered_customColors.close()
             
 
     

@@ -4,6 +4,7 @@
   <head class="bg">
     <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/custom_colors.css" type="text/css" />
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
 
@@ -13,9 +14,34 @@
     <link href="assets/css/simple-sidebar.css" rel="stylesheet">
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
+
+
+     
+
+      
       $(function() {
-    function unifyHeights() {
+      function unifyHeights() {
+
+
+       function findBootstrapEnvironment() {
+    var envs = ['xs', 'sm', 'md', 'lg'];
+
+    var $el = $('<div>');
+    $el.appendTo($('body'));
+
+    for (var i = envs.length - 1; i >= 0; i--) {
+        var env = envs[i];
+
+        $el.addClass('hidden-'+env);
+        if ($el.is(':hidden')) {
+            $el.remove();
+            return env;
+        }
+	    }
+
+	  }  
+      
         var maxHeight = 0;
         $('#mainRow').children('#sidebar, #stuff').each(function() {
             var height = $(this).outerHeight();
@@ -23,12 +49,32 @@
             if ( height > maxHeight ) {
                 maxHeight = height;
             }
-        });
+            });
+	    if (findBootstrapEnvironment() == 'sm'|| findBootstrapEnvironment() == 'xs'){
+	    return;
+	    }
+	    else{
+
         $('#sidebar').css('height', maxHeight);
-    }
-    unifyHeights();
+	$('#sidebar').css('min-height', '100vh');
+	    }
+	    }
+	    
+	    unifyHeights();
+	    
+	});
+
+	 $(window).resize(function() {
+    if( $(this).width() > 480 ) {
+        unifyHeights();
+	
+	}
+	else{
+	$('#sidebar').css('height', '0px');
+	}
       });
 	</script>
+
 	
   </head>
   
@@ -70,193 +116,193 @@
 	  <div id="" class="text-center col-sm-8 bg" style="height: 100%; padding: 0px;">
 	    <div class="container-fluid" style="height: 100%">
 	    
-<div class="row postentry" style="background: #d9a38c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >7</a>
+<div class="row postentry" id="custom-post-1">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >7</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d9ba8c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >12</a>
+<div class="row postentry" id="custom-post-2">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >12</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d9d18c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >Since I Left You</a>
+<div class="row postentry" id="custom-post-3">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >Since I Left You</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #c9d98c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >6</a>
+<div class="row postentry" id="custom-post-4">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >6</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #b2d98c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >19</a>
+<div class="row postentry" id="custom-post-5">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >19</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #9cd98c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >3</a>
+<div class="row postentry" id="custom-post-6">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >3</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cd994">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >14</a>
+<div class="row postentry" id="custom-post-7">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >14</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cd9ab">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >5</a>
+<div class="row postentry" id="custom-post-8">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >5</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cd9c2">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >11</a>
+<div class="row postentry" id="custom-post-9">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >11</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cd9d9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >1</a>
+<div class="row postentry" id="custom-post-10">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >1</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cc2d9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >9</a>
+<div class="row postentry" id="custom-post-11">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >9</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8cabd9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >16</a>
+<div class="row postentry" id="custom-post-12">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >16</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #8c94d9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >Since I Left You gggggggggggggggggggggggggggg g gggggggggggggg ggggg</a>
+<div class="row postentry" id="custom-post-13">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >Since I Left You gggggggggggggggggggggggggggg g gggggggggggggg ggggg</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #9c8cd9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >13</a>
+<div class="row postentry" id="custom-post-14">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >13</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #b28cd9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >2</a>
+<div class="row postentry" id="custom-post-15">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >2</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #c98cd9">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >8</a>
+<div class="row postentry" id="custom-post-16">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >8</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d98cd1">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >4</a>
+<div class="row postentry" id="custom-post-17">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >4</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d98cba">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >20</a>
+<div class="row postentry" id="custom-post-18">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >20</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d98ca3">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >15</a>
+<div class="row postentry" id="custom-post-19">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >15</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d98c8c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >Since</a>
+<div class="row postentry" id="custom-post-20">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >Since</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d9a38c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >17</a>
+<div class="row postentry" id="custom-post-21">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >17</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d9ba8c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >Since I Left You gggggggggggggggggggggggggggg g gggggggggggggg gggggtttttttttttttttttttttttttttqw ethoiqwh                     hfoiqhf </a>
+<div class="row postentry" id="custom-post-22">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >Since I Left You gggggggggggggggggggggggggggg g gggggggggggggg gggggtttttttttttttttttttttttttttqw ethoiqwh                     hfoiqhf </a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #d9d18c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >10</a>
+<div class="row postentry" id="custom-post-23">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >10</a>
     </div>
 </div>
 
 
 
-<div class="row postentry" style="background: #c9d98c">
-  <div class="col-sm-12" id="postrow">
-    <a href="#" class="postrow" >18</a>
+<div class="row postentry" id="custom-post-24">
+  <div class="col-sm-12">
+    <a href="#" id="postrow" >18</a>
     </div>
 </div>
 

@@ -4,6 +4,7 @@
   <head class="bg">
     <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/custom_colors.css" type="text/css" />
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
 
@@ -13,9 +14,34 @@
     <link href="assets/css/simple-sidebar.css" rel="stylesheet">
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
+
+
+     
+
+      
       $(function() {
-    function unifyHeights() {
+      function unifyHeights() {
+
+
+       function findBootstrapEnvironment() {
+    var envs = ['xs', 'sm', 'md', 'lg'];
+
+    var $el = $('<div>');
+    $el.appendTo($('body'));
+
+    for (var i = envs.length - 1; i >= 0; i--) {
+        var env = envs[i];
+
+        $el.addClass('hidden-'+env);
+        if ($el.is(':hidden')) {
+            $el.remove();
+            return env;
+        }
+	    }
+
+	  }  
+      
         var maxHeight = 0;
         $('#mainRow').children('#sidebar, #stuff').each(function() {
             var height = $(this).outerHeight();
@@ -23,12 +49,32 @@
             if ( height > maxHeight ) {
                 maxHeight = height;
             }
-        });
+            });
+	    if (findBootstrapEnvironment() == 'sm'|| findBootstrapEnvironment() == 'xs'){
+	    return;
+	    }
+	    else{
+
         $('#sidebar').css('height', maxHeight);
-    }
-    unifyHeights();
+	$('#sidebar').css('min-height', '100vh');
+	    }
+	    }
+	    
+	    unifyHeights();
+	    
+	});
+
+	 $(window).resize(function() {
+    if( $(this).width() > 480 ) {
+        unifyHeights();
+	
+	}
+	else{
+	$('#sidebar').css('height', '0px');
+	}
       });
 	</script>
+
 	
   </head>
   
