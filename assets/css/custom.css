@@ -114,6 +114,28 @@ html{
 }
 
 .postentry{
+    min-height: 5%;
+      margin: 2vh;
+    padding: 2vh;
+    border: 2vh;
+    font-size: 2.5vh;
 
-    height: 7%;
+}
+
+#postrow{
+        font-family: 'Source Sans Pro';
+    font-weight: 200;
+    text-decoration: none;
+    color: black;
+    font-color: black;
+    text-align: center;
+  
+}
+
+.postrow{
+
+    margin: 0;
+    padding: 0;
+    color: #000;
+    text-decoration: none;
 }

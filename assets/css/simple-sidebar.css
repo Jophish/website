@@ -25,7 +25,7 @@
     width: 0;
     height: 100%;
     margin-left: -100px;
-    overflow-y: auto;
+    #overflow-y: auto;
     background: #000;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -51,21 +51,22 @@
 /* Sidebar Styles */
 
 .sidebar {
+    
+    left: 0;
+    height: 100%;
 
+    top: 0;
     margin: 0;
     border: 0;
+    min-height: 100vh;
     padding: 0;
-    overflow: hidden;
     background: black;
     font-weight: 400%;
-    height: 100% !important;
-    min-height: 100%;
-    overflow: overlay
-min-height: 100%;
-	background-size: 100%;
-	background-attachment: scroll;
-	background-repeat: no-repeat;
-	background-position: center center;
+    #overflow: hidden;
+#	background-size: 100%;
+#	background-attachment: scroll;
+#	background-repeat: no-repeat;
+#	background-position: center center;
 	
     
 
@@ -74,14 +75,15 @@ min-height: 100%;
 .sidebar-nav {
     z-index: 1000;
     background: black;
-    height:  100%;
-    #position: absolute;
+
     top: 0;
     width: 100%;
     margin: 0;
     border: 0;
     padding: 0;
+    #padding-bottom: 5000px;
     list-style: none;
+    font-size: 100%;
 }
 
 .sidebar-nav li {
@@ -89,7 +91,7 @@ min-height: 100%;
     line-height: 20vh;
         font-family: 'Source Sans Pro';
 	font-weight: 400;
-	font-size: 20;
+	font-size: 1vw;
 	padding: 0;
 }
 
